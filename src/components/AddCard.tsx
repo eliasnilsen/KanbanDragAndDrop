@@ -40,7 +40,7 @@ const AddCard: React.FC<AddCardProps> = ({ column }) => {
             placeholder="New task..."
             className={`w-full rounded-md text-neutral-100 bg-violet-400/20 border border-violet-400/50 focus:outline-none p-2 placeholder-violet-200`}
           />
-          <motion.div className="flex gap-1 items-center" layout>
+          <div className="flex gap-1 items-center">
             <button
               type="submit"
               className="p-2 text-sm text-green-200 font-semibold hover:text-green-200/70 transition-colors"
@@ -53,16 +53,17 @@ const AddCard: React.FC<AddCardProps> = ({ column }) => {
             >
               Close
             </button>
-          </motion.div>
+          </div>
         </motion.form>
       ) : (
-        <button
+        <motion.button
+          layout
           onClick={() => setIsAddingText(true)}
           className="flex gap-1 m-auto p-2 items-center transition-colors text-neutral-100 hover:text-neutral-100/50"
         >
           <span>New card</span>
           <LuPlus />
-        </button>
+        </motion.button>
       )}
     </>
   );

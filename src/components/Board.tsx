@@ -7,7 +7,7 @@ const Board = () => {
   });
 
   return (
-    <div className="flex h-full w-full overflow-scroll gap-4 p-4">
+    <div className="grid grid-cols-2 md:flex md:flex-row h-full w-full overflow-scroll gap-1 sm:gap-2">
       <Column
         title="Backlog"
         headingColor="text-red-200"

@@ -5,10 +5,10 @@ interface DropHighlightProps {
 
 const DropHighlight: React.FC<DropHighlightProps> = ({ prevId, column }) => {
   return (
-    <span
+    <div
       data-before={prevId || "-1"}
       data-column={column}
-      className="my-1 h-1 w-full bg-vilot-200"
+      className="h-[2px] my-1 w-full bg-violet-200 opacity-0 rounded-full"
     />
   );
 };

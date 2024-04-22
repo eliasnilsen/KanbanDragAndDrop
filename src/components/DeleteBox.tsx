@@ -21,25 +21,24 @@ const DeleteBox = () => {
   };
 
   //handles the deletion of the card
-  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDragDrop = (e: React.DragEvent<HTMLDivElement>) => {
     const cardId = e.dataTransfer.getData("cardId");
     setDeleteCard(cardId);
+    console.log(e.dataTransfer.getData("cardId"));
     setIsActive(false);
   };
 
   return (
     <div
-      className={`h-56 w-56 shrink-0 place-content-center rounded-md ${
-        isActive
-          ? "bg-red-700/20 border border-red-700/50"
-          : "border border-slate-700 bg-slate-800"
+      className={`h-56 w-56 shrink-0 place-content-center rounded-md hidden xl:block ${
+        isActive ? "bg-red-700/20 border border-red-700/50" : "bg-slate-400/10 "
       }`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
-      onDragEnd={handleDragEnd}
+      onDrop={handleDragDrop}
     >
       <LuTrash2
-        className={`m-auto ${isActive ? "animate-bounce text-red-700/50" : ""}`}
+        className={`m-auto ${isActive ? "text-red-700/50" : ""}`}
         size={30}
       />
     </div>

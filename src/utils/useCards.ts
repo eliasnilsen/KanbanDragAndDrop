@@ -6,6 +6,7 @@ interface useCardStoreProps {
   cards: Card[] | [];
   setNewCard: (newCard: Card) => void;
   setDeleteCard: (cardId: string) => void;
+  setCards: (newCards: Card[]) => void;
 }
 
 export const useCardStore = create<useCardStoreProps>((set) => ({
@@ -18,4 +19,6 @@ export const useCardStore = create<useCardStoreProps>((set) => ({
     set((state) => ({
       cards: state.cards.filter((card) => card.id !== cardId),
     })),
+
+  setCards: (newCards) => set(() => ({ cards: newCards })),
 }));

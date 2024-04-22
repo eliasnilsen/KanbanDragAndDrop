@@ -15,5 +15,5 @@ export interface ColumnProps {
   title: string;
   headingColor: string;
   column: string;
-  cards: Card[] | null;
+  cards: Card[] | [];
 }
