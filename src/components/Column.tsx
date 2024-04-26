@@ -40,6 +40,7 @@ const Column: React.FC<ColumnProps> = ({
     const indicators = getDropIndicators();
     const { element } = getNearestIndicator(e, indicators);
 
+    // @ts-ignore
     const slot = element.dataset.before || "-1";
 
     if (slot !== cardId) {
@@ -75,6 +76,7 @@ const Column: React.FC<ColumnProps> = ({
     const indicators = elements || getDropIndicators();
 
     indicators.forEach((element) => {
+      // @ts-ignore
       element.style.opacity = "0";
     });
   };
@@ -87,6 +89,7 @@ const Column: React.FC<ColumnProps> = ({
     const indicators = getDropIndicators();
     clearDropHighlights(indicators);
     const element = getNearestIndicator(e, indicators);
+    // @ts-ignore
     element.element.style.opacity = "1";
   };
 
@@ -124,7 +127,9 @@ const Column: React.FC<ColumnProps> = ({
       </div>
       <div
         onDragLeave={handleDragLeave}
+        // @ts-ignore
         onDrop={handleDrop}
+        // @ts-ignore
         onDragOver={handleDragOver}
         className={`h-full w-full transition-colors ${isActive ? "" : ""} `}
       >
